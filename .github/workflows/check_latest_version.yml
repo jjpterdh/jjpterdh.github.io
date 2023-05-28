@@ -10,7 +10,7 @@ jobs:
     
     steps:
     - name: Checkout repository
-      uses: jjpterdh/jjpterdh.github.io@v2
+      uses: jjpterdh/jjpterdh.github.io@v3
       
     - name: Set up Git
       run: |
