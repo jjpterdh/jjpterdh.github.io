@@ -1,0 +1,37 @@
+name: Check Latest Commit
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: jjpterdh/jjpterdh.github.io@v2
+      
+    - name: Set up Git
+      run: |
+        git config --global user.name "danho"
+        git config --global user.email "danho011185@gmail.com"
+
+    - name: Fetch remote branches
+      run: git fetch
+      
+    - name: Check latest commit
+      run: |
+        LOCAL=$(git rev-parse HEAD)
+        REMOTE=$(git rev-parse origin/main)
+        if [ "$LOCAL" != "$REMOTE" ]; then
+          echo "Please pull the latest version."
+          exit 1
+        fi
+
+
+
+
+
+
+
