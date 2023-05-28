@@ -22,4 +22,4 @@ jobs:
         pip install -r requirements.txt
       
     - name: Get daily stats
-      run: python check_stats.py
+      run: python check_states.py
