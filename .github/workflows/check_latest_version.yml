@@ -2,7 +2,7 @@ name: Check Latest Commit
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   check:
@@ -23,7 +23,7 @@ jobs:
     - name: Check latest commit
       run: |
         LOCAL=$(git rev-parse HEAD)
-        REMOTE=$(git rev-parse origin/main)
+        REMOTE=$(git rev-parse origin/master)
         if [ "$LOCAL" != "$REMOTE" ]; then
           echo "Please pull the latest version."
           exit 1
